@@ -1,14 +1,9 @@
-// 1-main.js (or any other file where you want to implement the function)
-import ClassRoom from './0-classroom.js';
+import ClassRoom from './0-classroom';
 
-function initializeRooms() {
-  const room1 = new ClassRoom(19);
-  const room2 = new ClassRoom(20);
-  const room3 = new ClassRoom(34);
-
-  return [room1, room2, room3];
+export default function initializeRooms() {
+  const class1 = new ClassRoom(19);
+  const class2 = new ClassRoom(20);
+  const class3 = new ClassRoom(34);
+  const newList = [class1, class2, class3];
+  return (newList);
 }
-
-// Example usage:
-const rooms = initializeRooms();
-console.log(rooms);
