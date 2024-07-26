@@ -1,56 +1,30 @@
-class Currency {
+export default class Currency {
   constructor(code, name) {
-    // Type checks
-    if (typeof code !== 'string') {
-      throw new TypeError('Code must be a string');
-    }
-    if (typeof name !== 'string') {
-      throw new TypeError('Name must be a string');
-    }
-
-    // Attribute assignment
-    this._code = code;
-    this._name = name;
+    this.code = code;
+    this.name = name;
   }
 
-  // Getters
   get code() {
     return this._code;
+  }
+
+  set code(value) {
+    this._code = value;
   }
 
   get name() {
     return this._name;
   }
 
-  // Setters
-  set code(newCode) {
-    if (typeof newCode !== 'string') {
-      throw new TypeError('Code must be a string');
-    }
-    this._code = newCode;
+  set name(value) {
+    this._name = value;
   }
 
-  set name(newName) {
-    if (typeof newName !== 'string') {
-      throw new TypeError('Name must be a string');
-    }
-    this._name = newName;
-  }
-
-  // Method to display full currency
+  /**
+   * Creates the full string representation of this Currency.
+   * @returns {String}
+   */
   displayFullCurrency() {
-    return `${this._name} (${this._code})`;
+    return `${this.name} (${this.code})`;
   }
-}
-
-// Example usage:
-try {
-  const currency = new Currency('USD', 'United States Dollar');
-  console.log(currency.displayFullCurrency()); // Output: United States Dollar (USD)
-
-  currency.code = 'EUR';
-  currency.name = 'Euro';
-  console.log(currency.displayFullCurrency()); // Output: Euro (EUR)
-} catch (error) {
-  console.error(error);
 }
